@@ -13,9 +13,90 @@ Objective:
 
 ----
 
-Note:
+Step-by-Step Process
+- 
+
+Step 1: Create a Virtual Private Cloud (VPC)
 -
-Click Step-by-Step Process file for the walkthrough.
+  
+Created VPC:
+- I built a basic VPC with an internet gateway and attached it to the VPC.
+- I defined subnets as follows:
+
+- Public Subnets:
+- Dev public subnet 1: CIDR block 10.0.1.0/24 (Availability Zone 1A)
+- Two additional public subnets for load balancer and NAT gateway.
+
+- Private Subnets:
+- Dev private subnet 2: CIDR block 10.0.2.0/24 (Availability Zone 1B)
+
+- App Subnets:
+- App Subnet 1: CIDR block 10.0.10.0/24 (Availability Zone 1A)
+- App Subnet 2: CIDR block 10.0.11.0/24 (Availability Zone 1B)
+
+- Database Subnets:
+- Database Subnet 1: CIDR block 10.0.20.0/24 (Availability Zone 1A)
+- Database Subnet 2: CIDR block 10.0.21.0/24 (Availability Zone 1B)
+
+Step 2: Configure Route Tables
+-
+
+Configured Route Tables:
+- I created route tables to define traffic routes.
+- I set routes for public and private subnets:
+- Public subnets route: 0.0.0.0/0 to the internet gateway.
+- Private subnets route: 0.0.0.0/0 to the NAT gateway.
+- I associated subnets with their respective route tables.
+
+Step 3: Create Security Groups
+-
+
+Created Security Groups:
+- I created security groups for the database and Elastic Beanstalk.
+- I defined inbound rules:
+- Dev security group: Allowed inbound traffic from app servers (MySQL/Aurora).
+
+Step 4: Deploy RDS
+-
+
+Deployed RDS Database:
+- I created subnet groups for the database.
+- I selected the appropriate VPC, AZs, and subnets.
+- I configured database settings:
+- MySQL, free tier, db.t3.micro, and security group.
+
+Step 5: Configure Secrets Manager
+-
+
+Configured Secrets Manager:
+- I used AWS Secrets Manager to store database credentials.
+- I configured the secret with database credentials.
+
+Step 6: Set Up IAM Roles
+-
+
+Set Up IAM Roles:
+- I created an IAM role with permissions to create instance profiles.
+- I configured the role to interact with Secrets Manager.
+- I assigned the role to Elastic Beanstalk instances.
+
+Step 7: Deploy Application into Elastic Beanstalk
+-
+
+Deployed Application:
+- I set up an Elastic Beanstalk application and environment.
+- I selected a web server environment and uploaded the source code.
+- I configured environment settings: VPC, subnets, security groups, autoscaling, and load balancer.
+- I set environment properties (DB endpoint, DB name, secret name).
+- I deployed the application and verified the setup.
+
+Step 8: Implement Secret Rotation
+-
+
+Implemented Secret Rotation:
+- I edited the rotation configuration in Secrets Manager.
+- I created a rotation function using Lambda.
+- I configured Lambda with the necessary permissions and security groups.
 
 ----
 
