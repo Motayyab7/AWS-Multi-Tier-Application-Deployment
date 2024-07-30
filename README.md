@@ -11,9 +11,56 @@ Objective:
 - Deploy an application into Elastic Beanstalk.
 - Implement secret rotation for database credentials.
 
+----
+
 Note:
 -
 Click Step-by-Step Process file for the walkthrough.
+
+----
+
+Theory
+-
+
+
+Elastic Beanstalk Components
+-
+![Screenshot 2024-07-25 131156](https://github.com/user-attachments/assets/cf95165e-2422-4d7c-ad7c-17d0e7b79aea)
+
+
+Elatic Beanstalk Environment Tiers
+-
+
+![Screenshot 2024-07-25 131245](https://github.com/user-attachments/assets/4d1d18b1-3320-4fce-a7c6-2e8c960e52c8)
+
+
+Placement of RDS for Elastic Beanstalk
+-
+
+![Screenshot 2024-07-25 131306](https://github.com/user-attachments/assets/09d68b7a-dbcc-4c1f-a1c4-673c8878d013)
+
+
+Environment Lifecycle
+-
+
+![Screenshot 2024-07-25 131327](https://github.com/user-attachments/assets/14393d7b-885d-4748-b480-7309c8586849)
+
+
+Steps To Decouple Your Database
+- 
+
+![Screenshot 2024-07-25 131424](https://github.com/user-attachments/assets/8a5a4dc2-a99c-4dae-a130-9eebb24a0f22)
+
+
+# Elastic Beanstalk Application Architecture
+
+
+  
+![Screenshot 2024-07-25 131457](https://github.com/user-attachments/assets/10d928db-fd78-4d3d-a7bb-0b78343332a7)
+
+- At the end of this project this is what we created will look like.
+
+----
 
 Summary and Skills Gained:
 -
@@ -35,10 +82,3 @@ Project Outcome:
 - Gained proficiency in using various AWS services and tools.
 
 This documentation serves as a comprehensive guide to deploying a secure and scalable multi-tier application on AWS. Each step includes key learnings and insights to provide a clear understanding of the process.
-
-![Screenshot 2024-07-25 131156](https://github.com/user-attachments/assets/cf95165e-2422-4d7c-ad7c-17d0e7b79aea)
-![Screenshot 2024-07-25 131245](https://github.com/user-attachments/assets/4d1d18b1-3320-4fce-a7c6-2e8c960e52c8)
-![Screenshot 2024-07-25 131306](https://github.com/user-attachments/assets/09d68b7a-dbcc-4c1f-a1c4-673c8878d013)
-![Screenshot 2024-07-25 131327](https://github.com/user-attachments/assets/14393d7b-885d-4748-b480-7309c8586849)
-![Screenshot 2024-07-25 131424](https://github.com/user-attachments/assets/8a5a4dc2-a99c-4dae-a130-9eebb24a0f22)
-![Screenshot 2024-07-25 131457](https://github.com/user-attachments/assets/10d928db-fd78-4d3d-a7bb-0b78343332a7)
